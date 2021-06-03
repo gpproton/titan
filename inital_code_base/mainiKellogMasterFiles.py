@@ -19,7 +19,7 @@ period = now.month
 sftpHost = 'aloc3kru2lzdi.westeurope.azurecontainer.io'
 sftpUser = 'orion'
 sftpPass = "M3LC0rp234!@0011"
-sftpPath = "/upload/PROD-ENV"
+sftpPath = "/upload/TEST-ENV"
 logData('Script: mainiKellogMasterFiles.py\n')
 logData('Date: '+now.strftime("%b %d %Y %H:%M:%S")+'\n')
 
