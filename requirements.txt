@@ -1,0 +1,3 @@
+cx_Oracle == 8.2.1
+pysftp
+mailjet_rest
