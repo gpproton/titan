@@ -6,8 +6,9 @@
 
 from titan import app
 
+
 def main():
-    if __name__ == '__main__':
-        app.run()
+    app.run()
+
 
 main()
