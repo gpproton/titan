@@ -1,0 +1,11 @@
+
+env
+venv
+.idea
+*.pyc
+build/*
+dist/*
+
+## OS metadata
+.DS_Store
+desktop.ini
