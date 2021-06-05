@@ -1,4 +1,4 @@
-# Titan Project
+# Titan Project (Task helper)
 
 An easy to use python background task scheduler.
 
