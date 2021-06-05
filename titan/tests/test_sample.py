@@ -7,6 +7,6 @@
 from unittest import TestCase
 
 
-class Test(TestCase):
+class test_sample(TestCase):
     def test_run(self):
         self.run()
