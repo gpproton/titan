@@ -4,5 +4,9 @@
 #   and is released under the "MIT License Agreement". Please see the LICENSE
 #   file that should have been included as part of this package.
 
-def new_run():
-    return 0
+from titan.common.lib import lib_sample
+
+
+def execute():
+    lib_sample.new_run()
+    print('New job')

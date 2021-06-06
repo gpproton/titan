@@ -2,8 +2,10 @@
 import os
 from distutils.core import setup
 
+
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
+
 
 setup(name='Titan',
       version='0.01',
@@ -19,5 +21,5 @@ setup(name='Titan',
         "Development Status :: 3 - Alpha",
         "Topic :: Utilities",
         "License :: OSI Approved :: MIT License",
-    ],
-    )
+      ],
+      )
