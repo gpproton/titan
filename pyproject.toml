@@ -2,5 +2,5 @@
 minversion = "6.0"
 addopts = "--maxfail=2 -rf"
 testpaths = [
-    "titan/tests",
+    "tests",
 ]
