@@ -9,4 +9,4 @@ from titan.common.lib import lib_sample
 
 def execute():
     lib_sample.new_run()
-    print('New job')
+    print("New job")
