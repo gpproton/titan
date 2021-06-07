@@ -5,7 +5,10 @@ venv
 *.pyc
 build/*
 dist/*
-
+.venv/
+venv/
+.tmp/
+logs/*
 ## OS metadata
 .DS_Store
 desktop.ini
