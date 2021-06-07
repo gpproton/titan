@@ -2,6 +2,7 @@ import urllib3
 import logging
 import json
 
+
 class Callback:
 
     response = None
@@ -14,21 +15,21 @@ class Callback:
         try:
             http = urllib3.PoolManager()
             response = http.request(
-                params['callType'],
-                params['host'],
-                body = json.dumps(params['body']).encode('utf-8'),
-                headers=params['headers'],
-                fields=params['params']
+                params["callType"],
+                params["host"],
+                body=json.dumps(params["body"]).encode("utf-8"),
+                headers=params["headers"],
+                fields=params["params"],
             )
             self.response = response
 
             if response.status == 200:
-                logging.info('HTTP request completed..')
+                logging.info("HTTP request completed..")
             else:
-                logging.error('HTTP request encountered some errors..')
+                logging.error("HTTP request encountered some errors..")
 
         except urllib3.exceptions.NewConnectionError:
-            logging.warn('HTTP request failed to complete..')
+            logging.warn("HTTP request failed to complete..")
 
     def result(self):
         return self.response.data

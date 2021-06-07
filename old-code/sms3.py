@@ -10,21 +10,20 @@ def sendSMS(pmsg):
     authval = "Basic %s" % b64Val
 
     parameters = {
-        'callType': 'POST',
-        'host': 'https://api.infobip.com/sms/1/text/single',
-        'headers': {
-            'Content-Type': 'application/json',
-            'Accept-Charset': 'UTF-8',
-            'Authorization': authval
+        "callType": "POST",
+        "host": "https://api.infobip.com/sms/1/text/single",
+        "headers": {
+            "Content-Type": "application/json",
+            "Accept-Charset": "UTF-8",
+            "Authorization": authval,
         },
-        'body': {
-            'from': 'MCPL',
-            'to': ['+2347017745329', '+2348153494051','+2348081473292'],
-            'text': pmsg
+        "body": {
+            "from": "MCPL",
+            "to": ["+2347017745329", "+2348153494051", "+2348081473292"],
+            "text": pmsg,
         },
-        'params': {}
+        "params": {},
     }
- 
 
     response = Callback(parameters)
     response.execute()
