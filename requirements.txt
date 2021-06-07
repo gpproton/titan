@@ -1,18 +1,23 @@
 ## HTTP library
-urllib3==1.26.5
+urllib3>=1.26.5
 ## FTP library
-pysftp==0.2.9
+pysftp>=0.2.9
 ## CLI Creation toolkit
 click==8.0.1
 ## Task schedule helper
-apscheduler==3.7.0
+apscheduler>=3.7.0
 ## ORM for handling DB interactions.
-SQLAlchemy==1.4.17
+SQLAlchemy>=1.4.17
 ## DB Drivers [sqlite, mysql, postgres, oracle]
-cx-Oracle==8.2.1
-psycopg2-binary==2.8.6
-PyMySQL==1.0.2
-pymssql==2.2.1
-pysqlite3==0.4.6
+cx-Oracle>=8.2.1
+psycopg2-binary>=2.8.6
+PyMySQL>=1.0.2
+pymssql>=2.2.1
+pysqlite3>=0.4.6
 ## Mail libraries
 mailjet-rest==1.3.4
+## Dev dependencies
+pylint==2.8.3
+black==21.5b2
+## Others
+PyYAML>=5.4.1
