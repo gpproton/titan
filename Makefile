@@ -40,8 +40,8 @@ clean:
 	find . -type f -name '*.pyc' -delete
 
 lint:
-	 flake8 titan setup.py
 	 black --target-version=py35 titan setup.py
+	 flake8 titan setup.py
 
 doc-build:
 	docker-compose build
