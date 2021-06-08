@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import os
-from distutils.core import setup
+from setuptools import setup
 
 
 def read(fname):
@@ -17,10 +17,24 @@ setup(
     url="hhttps://github.com/TolaramGroup/titanProject/",
     license="MIT",
     platforms=["windows", "osx", "linux"],
-    packages=["titan", "titan.command"],
+    packages=["titan"],
+    python_requires=">=3.6.2",
+    package_dir={"": "."},
+    package_data={
+      "blib2to3": ["*.txt"],
+      "titan": ["py.typed"],
+    },
+    install_requires=[
+        "click",
+    ],
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Topic :: Utilities",
         "License :: OSI Approved :: MIT License",
     ],
+    entry_points={
+        "console_scripts": [
+            "titan=titan:main",
+        ]
+    },
 )
