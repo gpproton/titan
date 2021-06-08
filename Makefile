@@ -19,13 +19,13 @@ setup: venv
 run: venv
 	./$(VENV)/bin/python3 -m titan
 
-build:
+build: venv
 	./$(VENV)/bin/python3 setup.py build ${PARAMETERS}
 
-force:
+force: venv
 	./$(VENV)/bin/python3 setup.py build -f ${PARAMETERS}
 
-install:
+install: venv
 	./$(VENV)/bin/python3 setup.py install ${PARAMETERS}
 
 test: build
@@ -39,21 +39,25 @@ clean:
 	rm -rf .pytest_cache
 	find . -type f -name '*.pyc' -delete
 
-docker_build:
+dk_build:
 	docker-compose build
 
-docker_up:
+dk_up:
 	docker-compose up -d --build
 
-docker_clean:
+dk_ls:
+	docker-compose ps
+
+dk_logs:
+	docker-compose logs -f --tail 15
+
+dk_clean:
 	docker-compose down && docker-compose rm
 
-docker_down:
+dk_down:
 	docker-compose down
 
-# lint:
-#    ./bin/flake8.sh
-
-lint-fix:
-	 black --target-version=py35 .
+lint:
+	 flake8 titan setup.py
+	 black --target-version=py35 titan setup.py
 
