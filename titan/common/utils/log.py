@@ -10,7 +10,8 @@ import sys
 
 
 def get():
-    # Change root logger level from WARNING (default) to NOTSET in order for all messages to be delegated.
+    # Change root logger level from WARNING (default) to
+    # NOTSET in order for all messages to be delegated.
     logging.getLogger().setLevel(logging.NOTSET)
 
     # Add stdout handler, with level INFO
