@@ -8,7 +8,11 @@ venv/
 /.github/
 .git/
 .idea
+__pycache__
 *.pyc
+*.pyo
+*.pyd
+.Python
 build/*
 dist/*
 .tmp/
@@ -16,4 +20,3 @@ dist/*
 ## OS metadata
 .DS_Store
 desktop.ini
-
