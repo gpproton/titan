@@ -1,8 +1,12 @@
 # created by virtualenv automatically
 env
 venv
-.idea
+__pycache__
 *.pyc
+*.pyo
+*.pyd
+.Python
+.idea
 build/*
 dist/*
 .venv/
@@ -12,3 +16,4 @@ logs/*
 ## OS metadata
 .DS_Store
 desktop.ini
+.vscode/settings.json
