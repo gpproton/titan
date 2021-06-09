@@ -5,9 +5,10 @@
 #   file that should have been included as part of this package.
 
 
-# Jobs count
-# Jobs stats count
-# Config state
-# Job list and infos
-# More...
-
+"""
+Jobs count
+Jobs stats count
+Config state
+Job list and infos
+More...
+"""

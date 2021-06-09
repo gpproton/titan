@@ -5,6 +5,7 @@
 #   file that should have been included as part of this package.
 
 
-## Set log location from CLI
-## Manage clear logs
-##
+"""
+ Set log location from CLI
+ Manage clear logs
+"""
