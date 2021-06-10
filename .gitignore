@@ -7,6 +7,8 @@ __pycache__
 *.pyd
 .Python
 .idea
+.vscode
+titan.egg-info
 build/*
 dist/*
 .venv/
@@ -16,4 +18,3 @@ logs/*
 ## OS metadata
 .DS_Store
 desktop.ini
-.vscode/settings.json

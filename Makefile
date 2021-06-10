@@ -33,6 +33,7 @@ test: build
 
 clean:
 	rm -rf $(VENV)
+	rm -rf env
 	rm -rf build
 	rm -rf dist
 	rm -rf logs/*
