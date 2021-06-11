@@ -20,10 +20,7 @@ setup(
     packages=["titan"],
     python_requires=">=3.6.2",
     package_dir={"": "."},
-    package_data={
-      "blib2to3": ["*.txt"],
-      "titan": ["py.typed"],
-    },
+    package_data={},
     install_requires=[
         "click",
     ],
