@@ -5,11 +5,20 @@
 #   file that should have been included as part of this package.
 
 import click
-
+from titan.command import version
 
 @click.group(
     help="Titan, easy-to-use python background task scheduler",
     invoke_without_command=True,
 )
-def hook():
+def instance():
     pass
+
+
+def hook():
+
+    # Bounded CLI commands
+    instance.add_command(version.version)
+
+    # Start execution
+    instance()
