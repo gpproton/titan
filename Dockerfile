@@ -1,3 +1,4 @@
+# Build file for docker daemon mode.
 # ---- Base python ----
 FROM python:3.9-buster as base
 # Create app directory
