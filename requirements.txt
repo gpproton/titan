@@ -21,6 +21,8 @@ pylint==2.8.3
 flake8>=3.9.2
 pytest>=6.2.4
 black==21.5b2
+# Dependency injector
+dependency-injector>=4.36.2
 ## Others
 PyYAML>=5.4.1
 yamlreader==3.0.4
