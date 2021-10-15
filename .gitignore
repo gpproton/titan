@@ -1,6 +1,4 @@
 # created by virtualenv automatically
-env
-venv
 __pycache__
 *.pyc
 *.pyo
@@ -12,7 +10,6 @@ titan.egg-info
 build/*
 dist/*
 .venv/
-venv/
 .tmp/
 logs/*
 ## OS metadata
