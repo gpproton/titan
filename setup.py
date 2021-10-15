@@ -1,28 +1,29 @@
 #!/usr/bin/env python
 import os
 from setuptools import setup
+from titan.common.Default import Constant
 
 
-def read(fname):
-    return open(os.path.join(os.path.dirname(__file__), fname)).read()
+def read(filename):
+    return open(os.path.join(os.path.dirname(__file__), filename)).read()
 
 
 setup(
-    name="titan",
-    version="0.01",
-    description="An easy to use python background task scheduler",
+    name=Constant.project_name,
+    version=Constant.project_version,
+    description=Constant.project_description,
     long_description=read("README.md"),
-    author="Godwin peter .O",
-    author_email="me@godwin.dev",
-    url="hhttps://github.com/TolaramGroup/titanProject/",
-    license="MIT",
+    author=Constant.project_author,
+    author_email=Constant.project_author_email,
+    url=Constant.project_url,
+    license=Constant.project_license,
     platforms=["windows", "osx", "linux"],
-    packages=["titan"],
-    python_requires=">=3.6.2",
+    packages=[Constant.project_name],
+    python_requires=">=3.6",
     package_dir={"": "."},
     package_data={},
     install_requires=[
-        "click",
+        # "click",
     ],
     classifiers=[
         "Development Status :: 3 - Alpha",

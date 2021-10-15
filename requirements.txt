@@ -5,7 +5,7 @@ pysftp>=0.2.9
 ## CLI Creation toolkit
 click==8.0.1
 ## Task schedule helper
-apscheduler>=3.7.0
+apscheduler>=3.8.0
 ## ORM for handling DB interactions.
 SQLAlchemy>=1.4.17
 ## DB Drivers [sqlite, mysql, postgres, oracle]

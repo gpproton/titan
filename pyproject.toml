@@ -1,6 +1,0 @@
-[tool.pytest.ini_options]
-minversion = "6.0"
-addopts = "--maxfail=2 -rf"
-testpaths = [
-    "tests",
-]

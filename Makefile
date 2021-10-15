@@ -1,48 +1,50 @@
 # define the name of the virtual environment directory
-VENV := venv
+VENV := .venv
 TEST=
 PARAMETERS=
 
 # default target, when make executed without arguments
 all: venv
 
-$(VENV)/bin/activate: requirements.txt
-	python3 -m venv $(VENV)
-	./$(VENV)/bin/pip install -r requirements.txt
+$(VENV)/bin/activate:
 
 # venv is a shortcut target
 venv: $(VENV)/bin/activate
+	python3 -m pip install --upgrade setuptools virtualenv wheel pip psycopg2-binary black flake8
+	python3 -m pip install --user --upgrade pipenv
+	python3 -m virtualenv -p python3 $(VENV)
+	python3 -m pipenv install -r requirements.txt
 
-setup: venv
-	./$(VENV)/bin/python3 -m pip install --upgrade pip
+update:
+	python3 -m pipenv update
 
 run: venv
-	./$(VENV)/bin/python3 -m titan
+	python3 -m pipenv run python -m titan ${PARAMETERS}
 
 build: venv
-	./$(VENV)/bin/python3 setup.py build ${PARAMETERS}
+	python3 -m pipenv run python run setup.py build ${PARAMETERS}
 
 force: venv
-	./$(VENV)/bin/python3 setup.py build -f ${PARAMETERS}
+	python3 -m pipenv run python setup.py build -f ${PARAMETERS}
+
+dev: venv
+	python3 -m pipenv run python setup.py develop -u ${PARAMETERS}
 
 install: venv
-	./$(VENV)/bin/python3 setup.py install ${PARAMETERS}
+	python3 -m pipenv run python setup.py install ${PARAMETERS}
+
+remove: venv
+	python3 -m pipenv run python setup.py remove ${PARAMETERS}
 
 test: build
-	./$(VENV)/bin/python3 -m pytest ${TEST}
+	python3 -m pipenv run python -m pytest ${TEST}
 
 clean:
-	rm -rf $(VENV)
-	rm -rf env
-	rm -rf build
-	rm -rf dist
-	rm -rf logs/*
-	rm -rf .pytest_cache
-	find . -type f -name '*.pyc' -delete
+	pipenv --rm;rm -rf {$(VENV),env,build,dist,titan.egg-info,logs/*};rm -rf .pytest_cache;find . -type f -name '*.pyc' -delete
 
 lint:
-	 black --target-version=py35 titan setup.py
-	 flake8 titan setup.py
+	 python3 -m pipenv run python -m black --target-version=py35 titan setup.py
+	 python3 -m pipenv run python -m flake8 titan setup.py
 
 doc-build:
 	docker-compose build

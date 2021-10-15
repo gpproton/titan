@@ -16,3 +16,4 @@ logs/*
 .DS_Store
 desktop.ini
 Pipfile.lock
+Pipfile
