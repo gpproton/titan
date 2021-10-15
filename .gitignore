@@ -18,3 +18,4 @@ logs/*
 ## OS metadata
 .DS_Store
 desktop.ini
+Pipfile.lock
