@@ -1,0 +1,18 @@
+version: "2.4"
+services:
+  titan:
+    image: titan
+    container_name: titan
+    restart: unless-stopped
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./jobs/:/usr/app
+#    ports:
+#      - "8067:80"
+#    healthcheck:
+#      test: ["CMD", "curl", "-f", "http://localhost/"]
+#      interval: 30s
+#      timeout: 10s
+#      retries: 5
