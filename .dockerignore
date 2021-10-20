@@ -1,11 +1,23 @@
 
 env
 venv
+.venv/
+venv/
+/.coverage
+/coverage.xml
+/.github/
+.git/
 .idea
+__pycache__
 *.pyc
+*.pyo
+*.pyd
+.Python
 build/*
 dist/*
-
+jobs/*
+.tmp/
+/setup/
 ## OS metadata
 .DS_Store
 desktop.ini

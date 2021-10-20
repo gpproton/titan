@@ -3,16 +3,13 @@
 #  This file is part of the the Titan micro task scheduler project,
 #  and is released under the "MIT License Agreement". Please see the LICENSE
 #  file that should have been included as part of this package.
-import sys
-from titan import main
-from titan.Containers import Container
+from dependency_injector import containers, providers
+
 from titan.common.Default import Constant
 
 
-if __name__ == "__main__":
-    container = Container()
-    container.config.from_yaml(Constant.project_configuration)
-    container.init_resources()
-    container.wire(modules=[sys.modules[__name__]])
+class Container(containers.DeclarativeContainer):
 
-    main()
+    config = providers.Configuration()
+
+    constant = providers.Factory(Constant)

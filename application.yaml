@@ -1,0 +1,10 @@
+---
+web:
+  enabled: true
+  host: '0.0.0.0'
+  port: 4567
+mode: 'CLI' #CLI|daemon|execution
+log:
+  path: './'
+  rotate: true
+  period: 7
