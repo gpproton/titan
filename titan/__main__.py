@@ -6,12 +6,12 @@
 import sys
 from titan import main
 from titan.Containers import Container
-from titan.common.Default import Constant
+from titan.common.defaults import constant
 
 
 if __name__ == "__main__":
     container = Container()
-    container.config.from_yaml(Constant.project_configuration)
+    container.config.from_yaml(constant.project_configuration)
     container.init_resources()
     container.wire(modules=[sys.modules[__name__]])
 

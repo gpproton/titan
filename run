@@ -1,0 +1,14 @@
+#!/bin/bash
+titan_exec_string="python3 -m pipenv run python -m titan $*"
+if [ ! -d ".venv" ]; then
+    echo "Initilizing setup.."
+    sleep 2
+    if make install; then
+        bash -c "$titan_exec_string"
+    else
+        echo "Package setup failed.."
+        exit 1
+    fi
+else
+    bash -c "$titan_exec_string"
+fi

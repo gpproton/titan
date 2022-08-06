@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import os
 from setuptools import setup
-from titan.common.Default import Constant
+from titan.common.defaults import constant
 
 
 def read(filename):
@@ -9,16 +9,16 @@ def read(filename):
 
 
 setup(
-    name=Constant.project_name,
-    version=Constant.project_version,
-    description=Constant.project_description,
+    name=constant.project_name,
+    version=constant.project_version,
+    description=constant.project_description,
     long_description=read("README.md"),
-    author=Constant.project_author,
-    author_email=Constant.project_author_email,
-    url=Constant.project_url,
-    license=Constant.project_license,
+    author=constant.project_author,
+    author_email=constant.project_author_email,
+    url=constant.project_url,
+    license=constant.project_license,
     platforms=["windows", "osx", "linux"],
-    packages=[Constant.project_name],
+    packages=[constant.project_name],
     python_requires=">=3.6",
     package_dir={"": "."},
     package_data={},

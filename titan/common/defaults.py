@@ -5,7 +5,7 @@
 #   file that should have been included as part of this package.
 
 
-class Constant:
+class constant:
     def __init__(self):
         pass
 

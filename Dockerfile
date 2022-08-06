@@ -1,6 +1,6 @@
 # Build file for docker daemon mode.
 # ---- Base python ----
-FROM python:3.9-buster as base
+FROM python:3.10-alpine as base
 # Create app directory
 WORKDIR /app
 # Set up and activate virtual environment
