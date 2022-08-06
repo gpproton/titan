@@ -13,10 +13,16 @@ venv: $(VENV)/bin/activate
 	python3 -m pip install --upgrade setuptools virtualenv wheel pip psycopg2-binary black flake8
 	python3 -m pip install --user --upgrade pipenv
 	python3 -m virtualenv -p python3 $(VENV)
-	python3 -m pipenv install -r requirements.txt
+	python3 -m pipenv install --skip-lock
 
 update:
 	python3 -m pipenv update
+
+setup: venv
+	python3 -m pipenv run python setup.py install ${PARAMETERS}
+
+install: venv
+	make setup
 
 run: venv
 	python3 -m pipenv run python -m titan ${PARAMETERS}
@@ -29,9 +35,6 @@ force: venv
 
 dev: venv
 	python3 -m pipenv run python setup.py develop -u ${PARAMETERS}
-
-install: venv
-	python3 -m pipenv run python setup.py install ${PARAMETERS}
 
 remove: venv
 	python3 -m pipenv run python setup.py remove ${PARAMETERS}
