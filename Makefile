@@ -4,19 +4,19 @@ TEST=
 PARAMETERS=
 
 # default target, when make executed without arguments
-all: venv
+all: setup
 
 $(VENV)/bin/activate:
-
-setup: python3 -m venv $(VENV)
-	$(VENV)/bin/activate
-	python3 -m pip install --upgrade wheel pip pipenv psycopg2-binary black flake8 Django
-	python3 -m pipenv install --skip-lock
 
 # venv is a shortcut target
 venv: $(VENV)/bin/activate
 
-update:
+setup: venv
+	python3 -m venv $(VENV)
+	python3 -m pip install --upgrade wheel pip pipenv psycopg2-binary black flake8 Django
+	python3 -m pipenv install --skip-lock
+
+update: venv
 	python3 -m pipenv update
 
 dev: venv
@@ -34,8 +34,8 @@ run: dev
 # test: build
 # 	python3 -m pipenv run python -m pytest ${TEST}
 
-clean:
-	pipenv --rm;rm -rf {$(VENV),env,build,dist,titan.egg-info,logs/*};rm -rf .pytest_cache;find . -type f -name '*.pyc' -delete
+clean: venv
+	rm -rf {$(VENV),build,dist,logs/*};rm -rf .pytest_cache;find . -type f -name '*.pyc' -delete
 
 lint:
 	 python3 -m pipenv run python -m black --target-version=py35 titan setup.py

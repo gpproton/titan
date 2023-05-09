@@ -74,6 +74,14 @@ WSGI_APPLICATION = "titan.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# Static files
+STATIC_ROOT = "static-files/"
+STATIC_URL = "static/"
+
+# Media files
+MEDIA_ROOT = "media-files/"
+MEDIA_URL = "media/"
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
