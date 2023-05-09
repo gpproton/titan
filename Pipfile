@@ -1,39 +1,11 @@
 [[source]]
-name = "pypi"
 url = "https://pypi.org/simple"
 verify_ssl = true
-
-[requires]
-python_version = ">3.6"
+name = "pypi"
 
 [packages]
-## HTTP library
-urllib3=">1.26.5"
-## FTP library
-pysftp="0.2.9"
-## CLI Creation toolkit
-click="8.0.1"
-## Task schedule helper
-apscheduler=">3.8.0"
-## ORM for handling DB interactions.
-SQLAlchemy=">1.4.17"
-## DB Drivers [sqlite, mysql, postgres, oracle]
-cx-Oracle=">8.2.1"
-psycopg2-binary=">2.8.6"
-PyMySQL="*"
-pymssql=">2.2.1"
-pysqlite3=">0.4.6"
-## Mail libraries
-mailjet-rest="1.3.4"
-# Dependency injector
-dependency-injector=">4.36.2"
-## Others
-PyYAML=">5.4.1"
-yamlreader="*"
 
 [dev-packages]
-autopep8=">1.6.0"
-pylint="2.8.3"
-flake8=">3.9.2"
-pytest=">6.2.4"
-black=">21.5b2"
+
+[requires]
+python_version = "3.11"

@@ -1,6 +1,0 @@
----
-
-jobs:
-- module: "kel.job-00"
-  description: "test 00"
-  cron: "2 * * * *"
