@@ -26,11 +26,13 @@ SECRET_KEY = "django-insecure-hp4gbf=*px+=a_m4rzj^-c1o!c=+_5mw%^!%zde#2gvwyv@=fu
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+APSCHEDULER_DATETIME_FORMAT = "N j, Y, f:s a"
+APSCHEDULER_RUN_NOW_TIMEOUT = 60  # Second
 
 # Application definition
 
 INSTALLED_APPS = [
+    "django_apscheduler",
     "daemon",
     "django.contrib.admin",
     "django.contrib.auth",

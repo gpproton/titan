@@ -22,6 +22,15 @@ update: venv
 dev: venv
 	python3 manage.py runserver
 
+migrate: venv
+	python3 manage.py migrate
+
+create-admin: venv
+	python3 manage.py createsuperuser
+
+schedule: venv
+	python3 manage.py runapscheduler
+
 run: dev
 # python3 -m pipenv run python -m titan ${PARAMETERS}
 
